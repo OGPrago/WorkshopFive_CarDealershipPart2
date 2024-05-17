@@ -6,7 +6,7 @@ public class DealershipFileManager {
 
     public static Dealership getDealership() {
         try {
-            BufferedReader bufReader = new BufferedReader(new FileReader("DB_Dealership.csv"));
+            BufferedReader bufReader = new BufferedReader(new FileReader("inventory.csv"));
 
             String firstLine = bufReader.readLine();
             String[] splitFirstLine = firstLine.split("\\|");
@@ -47,7 +47,7 @@ public class DealershipFileManager {
 
     public static void saveDealership(Dealership dealership) {
         try {
-            BufferedWriter bufWriter = new BufferedWriter(new FileWriter("DB_Dealership.csv"));
+            BufferedWriter bufWriter = new BufferedWriter(new FileWriter("inventory.csv"));
 
             bufWriter.write(String.format("%s|%s|%s\n",
                     dealership.getName(),
